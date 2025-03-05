@@ -2,6 +2,10 @@ package org.example;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
+/* check:
+*  void testFullBoardNoWinner()
+* */
+
 public class AppTest {
 
     @Test
@@ -52,6 +56,14 @@ public class AppTest {
 
     @Test
     void testFullBoardNoWinner() {
+        /* This test case is not correct
+        *  X,O,X,
+        *  O,X,O,
+        *  X,O,X
+        *
+        * X has both diagonals
+        * */
+
         App game = new App();
         // Fill board: X,O,X,O,X,O,X,O,X
         // 1(X),2(O),3(X),4(O),5(X),6(O),7(X),8(O),9(X)
@@ -74,6 +86,7 @@ public class AppTest {
         game.makeMove(9); // X
 
         assertTrue(game.isBoardFull(), "Board should be fully occupied");
+        // should be asserted false
         assertTrue(game.checkWin(), "No winning line should exist");
     }
 }

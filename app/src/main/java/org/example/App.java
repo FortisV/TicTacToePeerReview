@@ -1,6 +1,12 @@
 package org.example;
 import java.util.Scanner;
 
+/* check:
+ * public boolean checkWin()
+ * public void startGame()
+ * */
+
+
 public class App {
     private static final char PLAYER_X = 'X';
     private static final char PLAYER_O = 'O';
@@ -82,6 +88,7 @@ public class App {
      * Check if the current player has a winning line.
      */
     public boolean checkWin() {
+        /* Could merge both for loops because they both iterate over the same values */
         // Rows
         for (int i = 0; i < BOARD_SIZE; i++) {
             if (board[i][0] == currentPlayer &&
@@ -137,6 +144,7 @@ public class App {
      * Main game loop, played via console input.
      */
     public void startGame() {
+        /* recursive startGame call to restart game instead of while loop */
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to Tic-Tac-Toe!");
 
